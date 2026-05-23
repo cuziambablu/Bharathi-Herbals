@@ -3,8 +3,11 @@ import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Benefits from "@/components/Benefits";
 import Ingredients from "@/components/Ingredients";
+import HowToUse from "@/components/HowToUse";
 import ProductShowcase from "@/components/ProductShowcase";
+import BeforeAfter from "@/components/BeforeAfter";
 import Testimonials from "@/components/Testimonials";
+import SocialProof from "@/components/SocialProof";
 import FAQ from "@/components/FAQ";
 import FinalCTA from "@/components/FinalCTA";
 import { Footer, FloatingWhatsApp } from "@/components/Footer";
@@ -37,9 +40,15 @@ export default function Home() {
       <Divider />
       <Ingredients />
       <Divider />
+      <HowToUse />
+      <Divider />
       <ProductShowcase />
       <Divider />
+      <BeforeAfter />
+      <Divider />
       <Testimonials />
+      <Divider />
+      <SocialProof />
       <Divider />
       <FAQ />
       <FinalCTA />

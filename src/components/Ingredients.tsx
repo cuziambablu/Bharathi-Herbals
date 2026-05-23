@@ -4,34 +4,34 @@ import { motion } from "framer-motion";
 
 const ingredients = [
   {
-    name: "Amla",
-    description: "Rich in Vitamin C, it strengthens hair follicles and prevents premature greying.",
-    image: "/amla.png",
+    name: "Castor Oil",
+    description: "Rich in ricinoleic acid and essential fatty acids, it strengthens hair roots and promotes thick hair growth.",
+    image: "/castor.png",
+  },
+  {
+    name: "Curry Leaves",
+    description: "Loaded with beta-carotene and amino acids, it prevents hair thinning and revitalizes hair follicles.",
+    image: "/curry.png",
+  },
+  {
+    name: "Hibiscus",
+    description: "Stimulates healthy growth from dormant follicles, prevents premature graying, and acts as a natural conditioner.",
+    image: "/hibiscus.png",
+  },
+  {
+    name: "Aloe Vera",
+    description: "Soothes itchy scalp, deep cleanses oily hair strands, and repairs hair shafts with rich vitamins.",
+    image: "/aloe.png",
   },
   {
     name: "Coconut Oil",
-    description: "Deeply nourishes the scalp and adds a natural, healthy shine to your hair.",
+    description: "Deeply penetrates the hair shafts to lock in moisture, prevent protein loss, and add a premium shiny gloss.",
     image: "/coconut.png",
   },
   {
     name: "Bhringraj",
-    description: "Known as the 'King of Herbs' for hair, it promotes rapid hair growth and reduces hair fall.",
+    description: "The legendary Ayurvedic 'King of Herbs' that cools the scalp, reduces stress-induced hair fall, and triggers growth.",
     image: "/bhringraj.png",
-  },
-  {
-    name: "Almond Oil",
-    description: "Packed with Vitamin E, it softens hair and improves overall scalp health.",
-    image: "/almond.png",
-  },
-  {
-    name: "Fenugreek",
-    description: "Effectively combats dandruff and conditions the hair for a silky smooth texture.",
-    image: "/fenugreek.png",
-  },
-  {
-    name: "Curry Leaves",
-    description: "Rich in antioxidants and proteins that help repair damaged hair roots.",
-    image: "/curry.png",
   }
 ];
 

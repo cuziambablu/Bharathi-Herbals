@@ -60,11 +60,11 @@ export default function BeforeAfter() {
           {/* Vertical Center Line for Desktop */}
           <div className="absolute left-1/2 -translate-x-1/2 top-4 bottom-4 w-0.5 bg-gradient-to-b from-brand-gold/20 via-brand-gold/50 to-brand-gold/20 hidden lg:block"></div>
 
-          <div className="space-y-12 lg:space-y-20">
+          <div className="flex overflow-x-auto pb-8 gap-6 snap-x snap-mandatory lg:flex-col lg:space-y-20 lg:gap-0 lg:pb-0 scrollbar-none px-4 lg:px-0 -mx-4 lg:mx-0">
             {results.map((item, index) => {
               const isEven = index % 2 === 0;
               return (
-                <div key={index} className="relative grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                <div key={index} className="relative grid grid-cols-1 lg:grid-cols-2 gap-8 items-center snap-center min-w-[85vw] lg:min-w-full flex-shrink-0">
                   
                   {/* Timeline Dot Indicator */}
                   <div className="absolute left-1/2 -translate-x-1/2 w-6 h-6 rounded-full bg-brand-cream border-4 border-brand-gold hidden lg:flex items-center justify-center z-20 shadow-[0_0_10px_rgba(198,168,124,0.5)]">

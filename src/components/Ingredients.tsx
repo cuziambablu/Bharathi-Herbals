@@ -47,7 +47,7 @@ export default function Ingredients() {
           <div className="w-24 h-1 bg-brand-gold mt-6 rounded-full opacity-60"></div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="flex overflow-x-auto pb-8 gap-6 snap-x snap-mandatory scrollbar-none md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-8 md:pb-0 px-4 md:px-0 -mx-4 md:mx-0">
           {ingredients.map((item, index) => (
             <motion.div
               key={index}
@@ -56,7 +56,7 @@ export default function Ingredients() {
               whileHover={{ y: -5 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.6, delay: index * 0.1, type: "spring", stiffness: 300 }}
-              className="group cursor-pointer"
+              className="group cursor-pointer snap-center min-w-[82vw] sm:min-w-[45vw] md:min-w-0 flex-shrink-0"
             >
               <div className="relative aspect-square overflow-hidden rounded-2xl mb-4 shadow-md group-hover:shadow-[0_0_30px_rgba(198,168,124,0.4)] transition-shadow duration-500 border border-transparent group-hover:border-brand-gold/30">
                 <div className="absolute inset-0 bg-brand-maroon/20 group-hover:bg-transparent transition-colors duration-500 z-10"></div>

@@ -94,7 +94,7 @@ export default function Hero() {
             <motion.div 
               animate={{ y: [0, -15, 0], rotate: [0, 5, 0] }}
               transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
-              className="absolute -top-6 -left-6 md:top-10 md:left-10 z-20 bg-white rounded-full p-1.5 shadow-xl border border-brand-beige/50"
+              className="absolute hidden md:block md:top-10 md:left-10 z-20 bg-white rounded-full p-1.5 shadow-xl border border-brand-beige/50"
             >
               <img src="/curry.png" alt="Curry Leaves" className="w-16 h-16 rounded-full object-cover" />
             </motion.div>
@@ -103,7 +103,7 @@ export default function Hero() {
             <motion.div 
               animate={{ y: [0, 20, 0], rotate: [0, -10, 0] }}
               transition={{ repeat: Infinity, duration: 5, ease: "easeInOut", delay: 1 }}
-              className="absolute -bottom-6 -right-6 md:bottom-20 md:-right-6 z-20 bg-white rounded-full p-1.5 shadow-xl border border-brand-beige/50"
+              className="absolute hidden md:block md:bottom-20 md:-right-6 z-20 bg-white rounded-full p-1.5 shadow-xl border border-brand-beige/50"
             >
               <img src="/coconut.png" alt="Coconut" className="w-20 h-20 rounded-full object-cover" />
             </motion.div>

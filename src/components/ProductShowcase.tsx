@@ -39,6 +39,13 @@ export default function ProductShowcase() {
               className="relative z-10 bg-white rounded-3xl p-6 shadow-[0_0_50px_rgba(198,168,124,0.4)] border-4 border-brand-gold/20 overflow-hidden cursor-pointer"
             >
               <div className="absolute inset-0 bg-gradient-to-t from-transparent to-brand-beige/20 pointer-events-none"></div>
+              
+              {/* Luxury Price Badge */}
+              <div className="absolute top-4 right-4 z-20 bg-brand-maroon/95 border-2 border-brand-gold text-brand-gold px-4 py-2 rounded-full font-bold text-center shadow-lg transition-transform duration-300 hover:scale-105">
+                <span className="block text-[9px] uppercase tracking-widest font-semibold leading-none opacity-80 mb-0.5">Special Price</span>
+                <span className="font-serif text-lg leading-none">₹199</span>
+              </div>
+
               <img 
                 src="/product.png" 
                 alt="Bharathi Herbals Hair Oil"
@@ -60,6 +67,16 @@ export default function ProductShowcase() {
             <p className="text-lg text-brand-beige/80">
               Experience the luxury of authentic Ayurvedic care. Our Herbal Hair Oil is crafted for those who refuse to compromise on quality and natural purity.
             </p>
+
+            {/* Price section */}
+            <div className="flex flex-col gap-1 my-2">
+              <div className="flex items-baseline gap-3">
+                <span className="text-3xl md:text-4xl font-serif text-brand-gold font-bold">₹199</span>
+                <span className="text-brand-beige/50 line-through text-lg">₹299</span>
+                <span className="bg-brand-green/35 text-brand-cream border border-brand-green/50 text-xs px-2.5 py-1 rounded font-medium tracking-wide">33% OFF</span>
+              </div>
+              <span className="text-sm text-brand-beige/65">Net Content: 100ml Premium Bottle</span>
+            </div>
             
             <ul className="space-y-4 my-4">
               {details.map((detail, index) => (

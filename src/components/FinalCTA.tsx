@@ -26,7 +26,7 @@ export default function FinalCTA() {
             Start Your Herbal Hair Care Journey Today
           </h2>
           <p className="text-xl text-brand-beige/80 mb-10">
-            Order directly through WhatsApp and experience nature’s finest goodness delivered to your doorstep.
+            Order directly through WhatsApp for just <span className="text-brand-gold font-bold">₹199</span> (33% OFF) and experience nature’s finest goodness delivered to your doorstep.
           </p>
           
           <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="inline-block">

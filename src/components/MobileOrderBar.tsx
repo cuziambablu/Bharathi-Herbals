@@ -30,7 +30,7 @@ export default function MobileOrderBar() {
             <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="block w-full">
               <button className="w-full relative overflow-hidden bg-brand-gold text-brand-maroon py-3.5 rounded-xl font-bold flex items-center justify-center gap-2 group shadow-xl">
                 <ShoppingBag size={20} />
-                <span className="text-lg">Order on WhatsApp</span>
+                <span className="text-lg">Order on WhatsApp • ₹199</span>
                 {/* CSS based Shimmer sweep for mobile button */}
                 <motion.div 
                   initial={{ x: "-100%" }}

@@ -37,6 +37,16 @@ export default function Hero() {
             <p className="text-lg text-brand-foreground/80 max-w-xl mx-auto lg:mx-0">
               Crafted with powerful natural ingredients like Amla, Coconut Oil, Bhringraj & Fenugreek to nourish your scalp and promote vibrant hair growth.
             </p>
+
+            {/* Price badge in Hero */}
+            <div className="flex flex-col gap-1 items-center lg:items-start my-2">
+              <div className="flex items-baseline gap-2">
+                <span className="text-3xl font-serif text-brand-maroon font-bold">₹199</span>
+                <span className="text-brand-foreground/40 line-through text-lg">₹299</span>
+                <span className="bg-brand-green/10 text-brand-green border border-brand-green/20 text-xs px-2 py-0.5 rounded font-medium">33% OFF</span>
+              </div>
+              <span className="text-xs text-brand-foreground/60">Net Content: 100ml Premium Bottle</span>
+            </div>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mt-4">
               <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
@@ -61,6 +71,17 @@ export default function Hero() {
             {/* Glowing spotlight effect behind bottle */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 md:w-80 md:h-80 bg-brand-gold/20 rounded-full blur-3xl transition-transform duration-700 group-hover:scale-110"></div>
             
+            {/* Floating Price Badge */}
+            <motion.div 
+              initial={{ scale: 0, rotate: -15 }}
+              animate={{ scale: 1, rotate: -8 }}
+              transition={{ type: "spring", delay: 0.8, stiffness: 200 }}
+              className="absolute top-4 right-4 md:top-8 md:right-8 z-20 bg-brand-maroon text-brand-gold border-2 border-brand-gold/40 px-4 py-2 rounded-2xl shadow-xl flex flex-col items-center justify-center font-bold rotate-[-8deg] hover:scale-110 hover:rotate-0 transition-all duration-300 cursor-pointer"
+            >
+              <span className="text-[10px] tracking-wider uppercase opacity-80 leading-none mb-0.5">Special Price</span>
+              <span className="text-xl font-serif">₹199</span>
+            </motion.div>
+
             <motion.img 
               whileHover={{ scale: 1.05, rotate: 1 }}
               transition={{ type: "spring", stiffness: 300, damping: 20 }}

@@ -28,7 +28,7 @@ export function Footer() {
           <div className="flex flex-col gap-3">
             <h4 className="font-serif text-lg text-brand-maroon mb-2">Contact</h4>
             <p className="text-brand-foreground/70 text-sm">
-              WhatsApp: +91 7702450902
+              WhatsApp: +91 7995800902
             </p>
             <p className="text-brand-foreground/70 text-sm">
               India
@@ -48,7 +48,7 @@ export function Footer() {
 }
 
 export function FloatingWhatsApp() {
-  const whatsappUrl = "https://wa.me/917702450902?text=Hi%20Bharathi%20Herbals,%20I%20want%20to%20order%20your%20Herbal%20Hair%20Oil";
+  const whatsappUrl = "https://wa.me/917995800902?text=Hi%20Bharathi%20Herbals,%20I%20want%20to%20order%20your%20Herbal%20Hair%20Oil";
 
   return (
     <div className="fixed bottom-6 right-6 z-50 flex items-center justify-center">

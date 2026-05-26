@@ -28,7 +28,7 @@ const reels = [
 ];
 
 export default function SocialProof() {
-  const whatsappUrl = "https://wa.me/917702450902?text=Hi%20Bharathi%20Herbals,%20I%20want%20to%20order%20your%20Herbal%20Hair%20Oil";
+  const whatsappUrl = "https://wa.me/917995800902?text=Hi%20Bharathi%20Herbals,%20I%20want%20to%20order%20your%20Herbal%20Hair%20Oil";
 
   return (
     <section id="social-proof" className="py-24 bg-brand-beige/20 relative">
@@ -177,8 +177,8 @@ export default function SocialProof() {
                 <h4 className="text-xs font-semibold text-brand-foreground/60 uppercase tracking-widest leading-none mb-1">
                   WhatsApp Support
                 </h4>
-                <a href="tel:+917702450902" className="text-sm font-bold text-brand-maroon hover:underline">
-                  +91 77024 50902
+                <a href="tel:+917995800902" className="text-sm font-bold text-brand-maroon hover:underline">
+                  +91 79958 00902
                 </a>
               </div>
             </div>

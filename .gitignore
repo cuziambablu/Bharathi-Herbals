@@ -42,3 +42,4 @@ next-env.d.ts
 
 .vercel
 upload-ftp.ps1
+sync_infinityfree.ps1

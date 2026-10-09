@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Button } from "./ui/button";
 
@@ -27,8 +28,17 @@ export default function Hero() {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="flex flex-col gap-6 text-center lg:text-left"
           >
-            <div className="inline-block px-4 py-1.5 bg-brand-green/10 text-brand-green font-medium text-sm rounded-full w-max mx-auto lg:mx-0">
-              100% Ayurvedic Formulation
+            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2">
+              <span className="inline-block px-3.5 py-1.5 bg-brand-green/10 text-brand-green font-medium text-xs sm:text-sm rounded-full">
+                100% Ayurvedic Formulation
+              </span>
+              <Link
+                href="/products/burgundy-natural-herbal-hair-color"
+                className="inline-flex items-center gap-1.5 px-3.5 py-1.5 bg-brand-maroon text-brand-gold font-bold text-xs sm:text-sm rounded-full border border-brand-gold/40 hover:scale-105 transition-all shadow-md cursor-pointer"
+              >
+                <span>✨ NEW: Burgundy Hair Color ₹149</span>
+                <span className="text-white">→</span>
+              </Link>
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif text-brand-maroon leading-tight">
               Pure Herbal Care for <br className="hidden md:block"/> 
@@ -54,11 +64,11 @@ export default function Hero() {
                   Order on WhatsApp
                 </Button>
               </a>
-              <a href="#ingredients">
-                <Button variant="outline" size="lg" className="w-full sm:w-auto text-base">
-                  Explore Ingredients
+              <Link href="/products/burgundy-natural-herbal-hair-color">
+                <Button variant="outline" size="lg" className="w-full sm:w-auto text-base border-brand-maroon text-brand-maroon hover:bg-brand-maroon hover:text-brand-gold font-bold">
+                  Burgundy Hair Color (₹149) →
                 </Button>
-              </a>
+              </Link>
             </div>
           </motion.div>
 

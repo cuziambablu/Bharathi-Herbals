@@ -8,6 +8,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useCart } from "@/context/CartContext";
 
 const navLinks = [
+  { name: "Burgundy Color (₹149)", href: "/products/burgundy-natural-herbal-hair-color", highlight: true },
   { name: "Products", href: "/products" },
   { name: "About", href: "/#about" },
   { name: "Benefits", href: "/#benefits" },
@@ -31,10 +32,22 @@ export default function Navbar() {
   return (
     <header
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        isScrolled ? "bg-brand-cream/90 backdrop-blur-md shadow-sm py-3" : "bg-transparent py-5"
+        isScrolled ? "bg-brand-cream/95 backdrop-blur-md shadow-sm" : "bg-brand-cream/80 backdrop-blur-sm"
       }`}
     >
-      <div className="container mx-auto px-4 md:px-6">
+      {/* Top Launch Announcement Bar */}
+      <div className="bg-brand-maroon text-brand-gold py-1.5 px-3 text-center text-xs font-medium tracking-wide flex items-center justify-center gap-2 border-b border-brand-gold/30">
+        <span className="w-2 h-2 rounded-full bg-brand-gold animate-pulse inline-block" />
+        <span>NEW LAUNCH: <strong>Burgundy Natural Herbal Hair Color (₹149)</strong> is now live!</span>
+        <Link
+          href="/products/burgundy-natural-herbal-hair-color"
+          className="underline font-bold text-white hover:text-brand-gold transition-colors ml-1 hidden sm:inline"
+        >
+          View Product →
+        </Link>
+      </div>
+
+      <div className="container mx-auto px-4 md:px-6 py-3">
         <div className="flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2">
             <span className="font-serif text-2xl font-bold text-brand-maroon tracking-wide">
@@ -43,12 +56,16 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden md:flex items-center gap-6 lg:gap-8">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
                 href={link.href}
-                className="text-sm font-medium text-brand-foreground/80 hover:text-brand-maroon transition-colors"
+                className={`text-sm font-medium transition-colors ${
+                  link.highlight
+                    ? "px-3 py-1 rounded-full bg-brand-maroon text-brand-gold font-bold hover:bg-brand-maroon/90 shadow-sm"
+                    : "text-brand-foreground/80 hover:text-brand-maroon"
+                }`}
               >
                 {link.name}
               </Link>

@@ -35,6 +35,8 @@ export default function Home() {
       <Navbar />
       <Hero />
       <Divider />
+      <NewArrivals />
+      <Divider />
       <About />
       <Divider />
       <Benefits />
@@ -42,8 +44,6 @@ export default function Home() {
       <Ingredients />
       <Divider />
       <HowToUse />
-      <Divider />
-      <NewArrivals />
       <Divider />
       <ProductShowcase />
       <Divider />

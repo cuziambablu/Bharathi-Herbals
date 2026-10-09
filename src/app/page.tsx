@@ -4,6 +4,7 @@ import About from "@/components/About";
 import Benefits from "@/components/Benefits";
 import Ingredients from "@/components/Ingredients";
 import HowToUse from "@/components/HowToUse";
+import NewArrivals from "@/components/NewArrivals";
 import ProductShowcase from "@/components/ProductShowcase";
 import BeforeAfter from "@/components/BeforeAfter";
 import Testimonials from "@/components/Testimonials";
@@ -41,6 +42,8 @@ export default function Home() {
       <Ingredients />
       <Divider />
       <HowToUse />
+      <Divider />
+      <NewArrivals />
       <Divider />
       <ProductShowcase />
       <Divider />

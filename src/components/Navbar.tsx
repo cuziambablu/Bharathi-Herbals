@@ -1,21 +1,24 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import Link from "next/link";
+import { Menu, X, ShoppingBag } from "lucide-react";
 import { Button } from "./ui/button";
 import { motion, AnimatePresence } from "framer-motion";
+import { useCart } from "@/context/CartContext";
 
 const navLinks = [
-  { name: "About", href: "#about" },
-  { name: "Benefits", href: "#benefits" },
-  { name: "Ingredients", href: "#ingredients" },
-  { name: "Shop", href: "#shop" },
-  { name: "FAQ", href: "#faq" },
+  { name: "Products", href: "/products" },
+  { name: "About", href: "/#about" },
+  { name: "Benefits", href: "/#benefits" },
+  { name: "Ingredients", href: "/#ingredients" },
+  { name: "FAQ", href: "/#faq" },
 ];
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { totalCount, openCart } = useCart();
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20);
@@ -23,7 +26,7 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const whatsappUrl = "https://wa.me/917995800902?text=Hi%20Bharathi%20Herbals,%20I%20want%20to%20order%20your%20Herbal%20Hair%20Oil";
+  const whatsappUrl = "https://wa.me/917995800902?text=Hi%20Bharathi%20Herbals,%20I%20want%20to%20order%20Bharathi%20Herbals%20products";
 
   return (
     <header
@@ -33,41 +36,69 @@ export default function Navbar() {
     >
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between">
-          <a href="#" className="flex items-center gap-2">
+          <Link href="/" className="flex items-center gap-2">
             <span className="font-serif text-2xl font-bold text-brand-maroon tracking-wide">
               Bharathi Herbals
             </span>
-          </a>
+          </Link>
 
           {/* Desktop Nav */}
           <nav className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.name}
                 href={link.href}
                 className="text-sm font-medium text-brand-foreground/80 hover:text-brand-maroon transition-colors"
               >
                 {link.name}
-              </a>
+              </Link>
             ))}
           </nav>
 
-          <div className="hidden md:block">
+          {/* Desktop Right CTA & Cart */}
+          <div className="hidden md:flex items-center gap-4">
+            <button
+              onClick={openCart}
+              className="relative p-2.5 rounded-full hover:bg-brand-maroon/10 text-brand-maroon transition-colors flex items-center justify-center cursor-pointer"
+              aria-label="View Cart"
+            >
+              <ShoppingBag size={22} />
+              {totalCount > 0 && (
+                <span className="absolute -top-1 -right-1 bg-brand-maroon text-brand-gold text-xs font-bold w-5 h-5 rounded-full flex items-center justify-center shadow-md animate-pulse">
+                  {totalCount}
+                </span>
+              )}
+            </button>
             <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
-              <Button>Order Now</Button>
+              <Button>Order on WhatsApp</Button>
             </a>
           </div>
 
-          {/* Mobile Menu Toggle */}
-          <button
-            className="md:hidden p-2 text-brand-maroon"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          >
-            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+          {/* Mobile Right Icons (Cart + Menu Toggle) */}
+          <div className="flex md:hidden items-center gap-2">
+            <button
+              onClick={openCart}
+              className="relative p-2 text-brand-maroon hover:bg-brand-maroon/10 rounded-full transition-colors cursor-pointer"
+              aria-label="View Cart"
+            >
+              <ShoppingBag size={22} />
+              {totalCount > 0 && (
+                <span className="absolute -top-1 -right-1 bg-brand-maroon text-brand-gold text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center shadow-sm">
+                  {totalCount}
+                </span>
+              )}
+            </button>
+            <button
+              className="p-2 text-brand-maroon hover:bg-brand-maroon/10 rounded-full transition-colors cursor-pointer"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              aria-label="Toggle navigation menu"
+            >
+              {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
         </div>
 
-        {/* Mobile Nav */}
+        {/* Mobile Nav Drawer */}
         <AnimatePresence>
           {mobileMenuOpen && (
             <motion.div
@@ -78,24 +109,37 @@ export default function Navbar() {
               className="md:hidden absolute top-full left-0 w-full bg-brand-cream/95 backdrop-blur-md shadow-lg py-4 px-6 flex flex-col gap-2 border-t border-brand-beige/50 overflow-hidden"
             >
               {navLinks.map((link, idx) => (
-                <motion.a
+                <motion.div
+                  key={link.name}
                   initial={{ opacity: 0, x: -15 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: idx * 0.05 + 0.1 }}
-                  key={link.name}
-                  href={link.href}
-                  className="text-lg font-serif text-brand-maroon py-3 border-b border-brand-beige/20 hover:text-brand-green transition-colors"
-                  onClick={() => setMobileMenuOpen(false)}
                 >
-                  {link.name}
-                </motion.a>
+                  <Link
+                    href={link.href}
+                    className="block text-lg font-serif text-brand-maroon py-3 border-b border-brand-beige/20 hover:text-brand-green transition-colors"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    {link.name}
+                  </Link>
+                </motion.div>
               ))}
               <motion.div 
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3 }}
-                className="pt-4"
+                className="pt-4 flex flex-col gap-2.5"
               >
+                <button
+                  onClick={() => {
+                    setMobileMenuOpen(false);
+                    openCart();
+                  }}
+                  className="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-full border border-brand-maroon/30 text-brand-maroon font-bold text-sm hover:bg-brand-maroon/5 transition-colors cursor-pointer"
+                >
+                  <ShoppingBag size={18} />
+                  <span>View Bag ({totalCount})</span>
+                </button>
                 <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
                   <Button className="w-full text-base py-5 bg-brand-gold text-brand-maroon hover:bg-brand-gold/90 font-bold">
                     Order on WhatsApp

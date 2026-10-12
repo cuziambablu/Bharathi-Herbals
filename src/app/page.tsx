@@ -4,6 +4,7 @@ import About from "@/components/About";
 import Benefits from "@/components/Benefits";
 import Ingredients from "@/components/Ingredients";
 import HowToUse from "@/components/HowToUse";
+import NewArrivalsBanner from "@/components/NewArrivalsBanner";
 import NewArrivals from "@/components/NewArrivals";
 import ProductShowcase from "@/components/ProductShowcase";
 import BeforeAfter from "@/components/BeforeAfter";
@@ -34,6 +35,8 @@ export default function Home() {
       <Particles />
       <Navbar />
       <Hero />
+      <Divider />
+      <NewArrivalsBanner />
       <Divider />
       <NewArrivals />
       <Divider />

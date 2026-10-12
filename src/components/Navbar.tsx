@@ -38,12 +38,12 @@ export default function Navbar() {
       {/* Top Launch Announcement Bar */}
       <div className="bg-brand-maroon text-brand-gold py-1.5 px-3 text-center text-xs font-medium tracking-wide flex items-center justify-center gap-2 border-b border-brand-gold/30">
         <span className="w-2 h-2 rounded-full bg-brand-gold animate-pulse inline-block" />
-        <span>NEW LAUNCH: <strong>Burgundy Natural Herbal Hair Color (₹149)</strong> is now live!</span>
+        <span>NEW ARRIVALS: <strong>Burgundy Hair Color (₹149)</strong> &amp; <strong>Herbal Soaps (₹150)</strong> are now live!</span>
         <Link
-          href="/products/burgundy-natural-herbal-hair-color"
+          href="/products"
           className="underline font-bold text-white hover:text-brand-gold transition-colors ml-1 hidden sm:inline"
         >
-          View Product →
+          Explore All →
         </Link>
       </div>
 

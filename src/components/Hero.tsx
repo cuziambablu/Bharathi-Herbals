@@ -34,18 +34,25 @@ export default function Hero() {
               </span>
               <Link
                 href="/products/burgundy-natural-herbal-hair-color"
-                className="inline-flex items-center gap-1.5 px-3.5 py-1.5 bg-brand-maroon text-brand-gold font-bold text-xs sm:text-sm rounded-full border border-brand-gold/40 hover:scale-105 transition-all shadow-md cursor-pointer"
+                className="inline-flex items-center gap-1 px-3 py-1 bg-brand-maroon text-brand-gold font-bold text-xs rounded-full border border-brand-gold/40 hover:scale-105 transition-all shadow-sm cursor-pointer"
               >
-                <span>✨ NEW: Burgundy Hair Color ₹149</span>
+                <span>Burgundy Color ₹149</span>
+                <span className="text-white">→</span>
+              </Link>
+              <Link
+                href="/products#soaps"
+                className="inline-flex items-center gap-1 px-3 py-1 bg-amber-800 text-amber-100 font-bold text-xs rounded-full border border-amber-300/40 hover:scale-105 transition-all shadow-sm cursor-pointer"
+              >
+                <span>✨ New Soaps ₹150</span>
                 <span className="text-white">→</span>
               </Link>
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif text-brand-maroon leading-tight">
               Pure Herbal Care for <br className="hidden md:block"/> 
-              <span className="text-brand-green">Stronger, Healthier</span> Hair
+              <span className="text-brand-green">Stronger, Healthier</span> Hair & Skin
             </h1>
             <p className="text-lg text-brand-foreground/80 max-w-xl mx-auto lg:mx-0">
-              Crafted with powerful natural ingredients like Amla, Coconut Oil, Bhringraj & Fenugreek to nourish your scalp and promote vibrant hair growth.
+              Crafted with authentic Ayurvedic herbs and cold-pressed botanical extracts to nourish your hair, restore scalp health, and bring natural radiance to your skin.
             </p>
 
             {/* Price badge in Hero */}
@@ -55,7 +62,7 @@ export default function Hero() {
                 <span className="text-brand-foreground/40 line-through text-lg">₹299</span>
                 <span className="bg-brand-green/10 text-brand-green border border-brand-green/20 text-xs px-2 py-0.5 rounded font-medium">33% OFF</span>
               </div>
-              <span className="text-xs text-brand-foreground/60">Net Content: 100ml Premium Bottle</span>
+              <span className="text-xs text-brand-foreground/60">Net Content: 100ml Premium Herbal Hair Oil</span>
             </div>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mt-4">
@@ -64,9 +71,9 @@ export default function Hero() {
                   Order on WhatsApp
                 </Button>
               </a>
-              <Link href="/products/burgundy-natural-herbal-hair-color">
+              <Link href="/products">
                 <Button variant="outline" size="lg" className="w-full sm:w-auto text-base border-brand-maroon text-brand-maroon hover:bg-brand-maroon hover:text-brand-gold font-bold">
-                  Burgundy Hair Color (₹149) →
+                  Explore New Arrivals →
                 </Button>
               </Link>
             </div>

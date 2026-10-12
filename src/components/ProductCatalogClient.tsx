@@ -13,22 +13,29 @@ export default function ProductCatalogClient({ initialProducts }: ProductCatalog
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("All");
 
-  const categories = ["All", "Natural Hair Color", "Hair Growth & Care"];
+  const categories = ["All", "Herbal Soaps", "Natural Hair Color", "Hair Growth & Care"];
 
   const filteredProducts = useMemo(() => {
     return initialProducts.filter((product) => {
       const matchesCategory =
         selectedCategory === "All" ||
-        product.category.toLowerCase() === selectedCategory.toLowerCase();
+        product.category.toLowerCase() === selectedCategory.toLowerCase() ||
+        (selectedCategory.toLowerCase() === "herbal soaps" && product.category.toLowerCase().includes("soap"));
 
       const q = searchQuery.toLowerCase().trim();
+      const cleanQ = q.replace(/&/g, "and").replace(/[^a-z0-9 ]/g, " ").replace(/\s+/g, " ").trim();
+      const cleanName = product.name.toLowerCase().replace(/&/g, "and");
+      const cleanDesc = product.description.toLowerCase().replace(/&/g, "and");
+
       const matchesSearch =
         !q ||
         product.name.toLowerCase().includes(q) ||
         product.shortName.toLowerCase().includes(q) ||
+        cleanName.includes(cleanQ) ||
+        cleanDesc.includes(cleanQ) ||
         product.category.toLowerCase().includes(q) ||
         product.description.toLowerCase().includes(q) ||
-        product.highlights.some((h) => h.toLowerCase().includes(q));
+        product.highlights.some((h) => h.toLowerCase().includes(q) || h.toLowerCase().replace(/&/g, "and").includes(cleanQ));
 
       return matchesCategory && matchesSearch;
     });

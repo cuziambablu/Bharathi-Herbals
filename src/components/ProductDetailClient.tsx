@@ -140,16 +140,27 @@ export default function ProductDetailClient({
                 {product.name}
               </h1>
               
-              {/* Star Rating */}
+              {/* Star Rating / Formulation Tag */}
               <div className="flex items-center gap-2 mt-3">
-                <div className="flex text-brand-gold">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} size={16} fill="currentColor" />
-                  ))}
-                </div>
-                <span className="text-sm font-bold text-brand-maroon">{product.rating}</span>
-                <span className="text-xs text-stone-400">({product.reviewsCount} customer reviews)</span>
-                <span className="mx-2 text-stone-300">•</span>
+                {product.reviewsCount > 0 ? (
+                  <>
+                    <div className="flex text-brand-gold">
+                      {[...Array(5)].map((_, i) => (
+                        <Star key={i} size={16} fill="currentColor" />
+                      ))}
+                    </div>
+                    <span className="text-sm font-bold text-brand-maroon">{product.rating}</span>
+                    <span className="text-xs text-stone-400">({product.reviewsCount} customer reviews)</span>
+                    <span className="mx-2 text-stone-300">•</span>
+                  </>
+                ) : (
+                  <>
+                    <span className="text-xs font-semibold text-brand-maroon bg-brand-gold/20 px-2.5 py-1 rounded-full">
+                      100% Herbal Formulation
+                    </span>
+                    <span className="mx-2 text-stone-300">•</span>
+                  </>
+                )}
                 <span className="text-xs font-semibold text-brand-green bg-brand-green/10 px-2 py-0.5 rounded">
                   In Stock ({product.stock} units)
                 </span>
@@ -481,85 +492,87 @@ export default function ProductDetailClient({
           </div>
         </div>
 
-        {/* CUSTOMER REVIEWS SECTION */}
-        <section className="mb-20">
-          <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-8 gap-4">
-            <div>
-              <span className="text-xs font-bold text-brand-gold uppercase tracking-widest">
-                Real Customer Feedback
-              </span>
-              <h2 className="text-3xl font-serif text-brand-maroon font-bold mt-1">
-                Customer Reviews
-              </h2>
-            </div>
-            <div className="flex items-center gap-3 bg-white px-5 py-2.5 rounded-2xl border border-brand-beige shadow-sm">
-              <span className="text-2xl font-serif font-bold text-brand-maroon">
-                {product.rating}
-              </span>
-              <div className="flex text-brand-gold">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} size={16} fill="currentColor" />
-                ))}
+        {/* CUSTOMER REVIEWS SECTION (Only when authentic reviews are available) */}
+        {product.reviews && product.reviews.length > 0 && (
+          <section className="mb-20">
+            <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-8 gap-4">
+              <div>
+                <span className="text-xs font-bold text-brand-gold uppercase tracking-widest">
+                  Real Customer Feedback
+                </span>
+                <h2 className="text-3xl font-serif text-brand-maroon font-bold mt-1">
+                  Customer Reviews
+                </h2>
               </div>
-              <span className="text-xs text-stone-400">
-                Based on {product.reviewsCount} reviews
-              </span>
+              <div className="flex items-center gap-3 bg-white px-5 py-2.5 rounded-2xl border border-brand-beige shadow-sm">
+                <span className="text-2xl font-serif font-bold text-brand-maroon">
+                  {product.rating}
+                </span>
+                <div className="flex text-brand-gold">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} size={16} fill="currentColor" />
+                  ))}
+                </div>
+                <span className="text-xs text-stone-400">
+                  Based on {product.reviewsCount} reviews
+                </span>
+              </div>
             </div>
-          </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {product.reviews.map((rev) => (
-              <div
-                key={rev.id}
-                className="bg-white p-6 rounded-3xl border border-brand-beige shadow-sm space-y-3 flex flex-col justify-between"
-              >
-                <div className="space-y-2">
-                  <div className="flex items-center justify-between">
-                    <div className="flex text-brand-gold">
-                      {[...Array(rev.rating)].map((_, i) => (
-                        <Star key={i} size={14} fill="currentColor" />
-                      ))}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {product.reviews.map((rev) => (
+                <div
+                  key={rev.id}
+                  className="bg-white p-6 rounded-3xl border border-brand-beige shadow-sm space-y-3 flex flex-col justify-between"
+                >
+                  <div className="space-y-2">
+                    <div className="flex items-center justify-between">
+                      <div className="flex text-brand-gold">
+                        {[...Array(rev.rating)].map((_, i) => (
+                          <Star key={i} size={14} fill="currentColor" />
+                        ))}
+                      </div>
+                      <span className="text-[11px] text-stone-400">{rev.date}</span>
                     </div>
-                    <span className="text-[11px] text-stone-400">{rev.date}</span>
+
+                    <h4 className="font-serif text-base font-bold text-brand-maroon leading-snug">
+                      "{rev.title}"
+                    </h4>
+
+                    <p className="text-xs sm:text-sm text-brand-foreground/75 leading-relaxed">
+                      {rev.comment}
+                    </p>
                   </div>
 
-                  <h4 className="font-serif text-base font-bold text-brand-maroon leading-snug">
-                    "{rev.title}"
-                  </h4>
-
-                  <p className="text-xs sm:text-sm text-brand-foreground/75 leading-relaxed">
-                    {rev.comment}
-                  </p>
-                </div>
-
-                <div className="pt-3 border-t border-brand-beige/60 flex items-center justify-between text-xs">
-                  <div>
-                    <span className="font-bold text-brand-maroon block">{rev.author}</span>
-                    <span className="text-stone-400 text-[11px]">{rev.location}</span>
+                  <div className="pt-3 border-t border-brand-beige/60 flex items-center justify-between text-xs">
+                    <div>
+                      <span className="font-bold text-brand-maroon block">{rev.author}</span>
+                      <span className="text-stone-400 text-[11px]">{rev.location}</span>
+                    </div>
+                    {rev.verified && (
+                      <span className="text-brand-green font-semibold text-[11px] flex items-center gap-1">
+                        <Check size={12} /> Verified Buyer
+                      </span>
+                    )}
                   </div>
-                  {rev.verified && (
-                    <span className="text-brand-green font-semibold text-[11px] flex items-center gap-1">
-                      <Check size={12} /> Verified Buyer
-                    </span>
-                  )}
                 </div>
-              </div>
-            ))}
-          </div>
-        </section>
+              ))}
+            </div>
+          </section>
+        )}
 
         {/* RELATED BHARATHI HERBALS PRODUCTS */}
         {relatedProducts.length > 0 && (
           <section className="pt-8 border-t border-brand-beige">
             <div className="text-center max-w-xl mx-auto mb-10">
               <span className="text-xs font-bold text-brand-gold uppercase tracking-widest">
-                Complete Ayurvedic Hair Ritual
+                Ayurvedic Personal Care Collection
               </span>
               <h2 className="text-3xl font-serif text-brand-maroon font-bold mt-1">
                 Related Bharathi Herbals Products
               </h2>
               <p className="text-sm text-brand-foreground/70 mt-2">
-                Pair your natural hair color with our signature hair growth oil for maximum strength and shine.
+                Discover our pure botanical remedies designed to nourish, cleanse, and revitalize.
               </p>
             </div>
 

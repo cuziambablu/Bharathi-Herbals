@@ -314,6 +314,174 @@ export const PRODUCTS: Product[] = [
         verified: true
       }
     ]
+  },
+  {
+    id: "fair-and-glow-soap",
+    slug: "fair-and-glow-soap",
+    name: "Bharathi Herbals Fair & Glow Soap",
+    shortName: "Fair & Glow Soap",
+    brand: "Bharathi Herbals",
+    category: "Herbal Soaps",
+    price: 150,
+    originalPrice: 150,
+    weight: "Standard Bar",
+    weightShort: "Bar",
+    badge: "NEW ARRIVAL",
+    stock: 50,
+    image: "/fair-and-glow-soap.png",
+    gallery: [
+      "/fair-and-glow-soap.png"
+    ],
+    rating: 5.0,
+    reviewsCount: 0,
+    created_at: "2026-10-12T00:00:00.000Z",
+    description:
+      "Bring a fresh addition to your daily skincare routine with Bharathi Herbals Fair & Glow Soap. Featuring distinctive herbal-inspired packaging and a convenient everyday format, this soap joins our growing range of personal-care products. Enjoy a refreshing cleansing experience as part of your regular skincare routine.",
+    highlights: [
+      "Natural Herbs & Gentle Care",
+      "Skin Brightening Soap",
+      "Enriched with Turmeric & Sandalwood",
+      "With Rose Extract & Natural Oils",
+      "Suitable For All Skin Types",
+      "Everyday Herbal Cleansing"
+    ],
+    benefits: [
+      {
+        title: "Gentle Everyday Cleansing",
+        description: "Creates a soft, creamy lather that cleanses away daily impurities without stripping natural skin moisture."
+      },
+      {
+        title: "Goodness of Natural Herbs",
+        description: "Infused with traditional botanical extracts including turmeric and rose for a refreshed, radiant feel."
+      },
+      {
+        title: "Suitable for All Skin Types",
+        description: "Mild herbal formulation designed for comfortable daily cleansing across all skin types."
+      }
+    ],
+    details: [
+      { label: "Product Name", value: "Fair & Glow Soap" },
+      { label: "Brand", value: "Bharathi Herbals" },
+      { label: "Price", value: "₹150 (Inclusive of all taxes)" },
+      { label: "Product Category", value: "Soap / Personal Care" },
+      { label: "Product Type", value: "Herbal Soap" },
+      { label: "Status", value: "Active & Available" }
+    ],
+    ingredients: [
+      {
+        name: "Turmeric & Sandalwood",
+        description: "Time-honored botanicals traditionally used for gentle skin care and everyday freshness."
+      },
+      {
+        name: "Rose Extract",
+        description: "Provides a soothing touch and mild natural fragrance during every cleanse."
+      },
+      {
+        name: "Natural Oils",
+        description: "Plant-based oils that maintain skin softness and prevent tightness after washing."
+      }
+    ],
+    howToApply: [
+      {
+        step: "Step 1: Lather",
+        instruction: "Rub the soap gently between wet hands or directly onto wet skin to build a creamy herbal lather."
+      },
+      {
+        step: "Step 2: Cleanse & Rinse",
+        instruction: "Massage gently across skin and rinse thoroughly with clean water. Pat dry."
+      }
+    ],
+    shippingInfo: [
+      {
+        title: "Pan-India Shipping",
+        description: "Dispatched within 24 hours. Safe pan-India delivery."
+      }
+    ],
+    reviews: []
+  },
+  {
+    id: "multani-mitti-soap",
+    slug: "multani-mitti-soap",
+    name: "Bharathi Herbals Multani Mitti Soap",
+    shortName: "Multani Mitti Soap",
+    brand: "Bharathi Herbals",
+    category: "Herbal Soaps",
+    price: 150,
+    originalPrice: 150,
+    weight: "Standard Bar",
+    weightShort: "Bar",
+    badge: "NEW ARRIVAL",
+    stock: 50,
+    image: "/multani-mitti-soap.png",
+    gallery: [
+      "/multani-mitti-soap.png"
+    ],
+    rating: 5.0,
+    reviewsCount: 0,
+    created_at: "2026-10-12T00:00:00.000Z",
+    description:
+      "Introduce a refreshing addition to your daily skincare routine with Bharathi Herbals Multani Mitti Soap. Featuring Multani Mitti-inspired positioning and distinctive earthy packaging, this soap is designed for everyday cleansing. Discover another choice in the Bharathi Herbals personal-care collection and make it part of your regular bathing routine.",
+    highlights: [
+      "100% Natural Fuller's Earth Clay (Multani Mitti)",
+      "Enriched with Aloe Vera & Sandalwood",
+      "Contains Rose Extract, Turmeric & Glycerin",
+      "Paraben Free, Sulfate Free & Silicon Free",
+      "Controls Excess Oil & Deep Cleanses",
+      "Suitable For All Skin Types"
+    ],
+    benefits: [
+      {
+        title: "Deep Cleansing Clay Power",
+        description: "Multani Mitti gently absorbs surface oil, removes dirt, and unclogs pores for refreshed, clean skin."
+      },
+      {
+        title: "Soothes & Hydrates with Aloe Vera",
+        description: "Aloe Vera and glycerin soothe skin and lock in moisture to prevent post-wash dryness."
+      },
+      {
+        title: "Pure & Chemical-Free Formulation",
+        description: "Free from parabens, sulfates, silicones, and artificial colors for a clean bathing experience."
+      }
+    ],
+    details: [
+      { label: "Product Name", value: "Multani Mitti Soap" },
+      { label: "Brand", value: "Bharathi Herbals" },
+      { label: "Price", value: "₹150 (Inclusive of all taxes)" },
+      { label: "Product Category", value: "Soap / Personal Care" },
+      { label: "Product Type", value: "Multani Mitti Soap" },
+      { label: "Status", value: "Active & Available" }
+    ],
+    ingredients: [
+      {
+        name: "Multani Mitti (Fuller's Earth)",
+        description: "Natural mineral clay renowned for deep cleansing, absorbing excess oil, and refreshing skin."
+      },
+      {
+        name: "Aloe Vera & Glycerin",
+        description: "Hydrates and calms skin, ensuring skin remains soft, conditioned, and supple."
+      },
+      {
+        name: "Sandalwood, Rose Extract & Turmeric",
+        description: "Botanical extracts that refresh, tone, and promote an even, healthy skin look."
+      }
+    ],
+    howToApply: [
+      {
+        step: "Step 1: Lather",
+        instruction: "Wet skin and work the soap into a rich, gentle lather with your hands."
+      },
+      {
+        step: "Step 2: Massage & Rinse",
+        instruction: "Gently massage over face and body for 30-60 seconds, then rinse off thoroughly with clean water."
+      }
+    ],
+    shippingInfo: [
+      {
+        title: "Pan-India Shipping",
+        description: "Dispatched within 24 hours. Safe pan-India delivery."
+      }
+    ],
+    reviews: []
   }
 ];
 
@@ -333,15 +501,21 @@ export function searchProducts(query: string = "", category: string = "All"): Pr
   return PRODUCTS.filter((product) => {
     const matchesCategory =
       category === "All" ||
-      product.category.toLowerCase() === category.toLowerCase();
+      product.category.toLowerCase() === category.toLowerCase() ||
+      (category.toLowerCase() === "soaps" && product.category.toLowerCase().includes("soap"));
     const q = query.toLowerCase().trim();
+    const cleanQ = q.replace(/&/g, "and").replace(/[^a-z0-9 ]/g, " ").replace(/\s+/g, " ").trim();
+    const cleanName = product.name.toLowerCase().replace(/&/g, "and");
+    const cleanDesc = product.description.toLowerCase().replace(/&/g, "and");
     const matchesQuery =
       !q ||
       product.name.toLowerCase().includes(q) ||
       product.shortName.toLowerCase().includes(q) ||
+      cleanName.includes(cleanQ) ||
+      cleanDesc.includes(cleanQ) ||
       product.category.toLowerCase().includes(q) ||
       product.description.toLowerCase().includes(q) ||
-      product.highlights.some((h) => h.toLowerCase().includes(q));
+      product.highlights.some((h) => h.toLowerCase().includes(q) || h.toLowerCase().replace(/&/g, "and").includes(cleanQ));
     return matchesCategory && matchesQuery;
   });
 }

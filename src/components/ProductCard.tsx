@@ -20,7 +20,7 @@ export default function ProductCard({ product }: ProductCardProps) {
         <div className="absolute top-3 left-3 z-20">
           <span
             className={`px-3 py-1 rounded-full text-[11px] font-bold tracking-wider uppercase shadow-md ${
-              product.badge === "NEW LAUNCH"
+              product.badge === "NEW LAUNCH" || product.badge === "NEW ARRIVAL"
                 ? "bg-brand-maroon text-brand-gold border border-brand-gold/40"
                 : "bg-brand-green text-brand-cream border border-brand-green/30"
             }`}
@@ -64,11 +64,17 @@ export default function ProductCard({ product }: ProductCardProps) {
             <span className="font-medium bg-brand-beige/50 px-2 py-0.5 rounded text-brand-maroon">
               {product.weightShort}
             </span>
-            <div className="flex items-center gap-1 text-brand-gold">
-              <Star size={13} fill="currentColor" />
-              <span className="font-semibold text-brand-foreground/80">{product.rating}</span>
-              <span className="text-stone-400">({product.reviewsCount})</span>
-            </div>
+            {product.reviewsCount > 0 ? (
+              <div className="flex items-center gap-1 text-brand-gold">
+                <Star size={13} fill="currentColor" />
+                <span className="font-semibold text-brand-foreground/80">{product.rating}</span>
+                <span className="text-stone-400">({product.reviewsCount})</span>
+              </div>
+            ) : (
+              <span className="text-[11px] font-semibold text-brand-green bg-brand-green/10 px-2 py-0.5 rounded">
+                100% Herbal
+              </span>
+            )}
           </div>
         </div>
 

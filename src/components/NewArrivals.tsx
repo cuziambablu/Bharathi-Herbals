@@ -27,7 +27,7 @@ export default function NewArrivals() {
               Featured Products & New Launches
             </h2>
             <p className="text-sm sm:text-base text-brand-foreground/75 mt-2 max-w-xl">
-              Discover our latest chemical-free Burgundy Natural Herbal Hair Color alongside our signature Hair Oil.
+              Discover our authentic Ayurvedic collection, including our signature Herbal Hair Oil, Burgundy Hair Color, and new everyday herbal soaps.
             </p>
           </div>
 
@@ -41,7 +41,7 @@ export default function NewArrivals() {
         </div>
 
         {/* Product Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
           {products.map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}

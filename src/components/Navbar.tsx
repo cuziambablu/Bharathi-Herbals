@@ -8,7 +8,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useCart } from "@/context/CartContext";
 
 const navLinks = [
-  { name: "Burgundy Color (₹149)", href: "/products/burgundy-natural-herbal-hair-color", highlight: true },
+  { name: "✨ New Soaps (₹150)", href: "/#new-arrivals", highlight: true },
+  { name: "Burgundy Color (₹149)", href: "/products/burgundy-natural-herbal-hair-color" },
   { name: "Products", href: "/products" },
   { name: "About", href: "/#about" },
   { name: "Benefits", href: "/#benefits" },

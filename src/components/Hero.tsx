@@ -12,7 +12,7 @@ export default function Hero() {
   const y2 = useTransform(scrollY, [0, 1000], [0, -150]);
 
   return (
-    <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-gradient-to-b from-brand-cream to-brand-beige/50 pt-20">
+    <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-gradient-to-b from-brand-cream to-brand-beige/50 pt-32 sm:pt-36 pb-12">
       {/* Background organic shapes */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden -z-10">
         <motion.div style={{ y: y1 }} className="absolute top-[-10%] right-[-5%] w-[50%] h-[50%] rounded-full bg-brand-gold/10 blur-3xl"></motion.div>

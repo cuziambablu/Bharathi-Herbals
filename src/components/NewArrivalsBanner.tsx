@@ -22,7 +22,7 @@ export default function NewArrivalsBanner() {
   };
 
   return (
-    <section className="py-16 md:py-24 bg-gradient-to-b from-brand-beige/40 via-brand-cream to-brand-beige/30 relative overflow-hidden">
+    <section id="new-arrivals" className="py-16 md:py-24 bg-gradient-to-b from-brand-beige/40 via-brand-cream to-brand-beige/30 relative overflow-hidden scroll-mt-24">
       {/* Decorative luxury glows */}
       <div className="absolute top-10 left-1/2 -translate-x-1/2 w-full max-w-6xl h-96 bg-radial from-brand-gold/15 via-transparent to-transparent blur-3xl pointer-events-none" />
 
